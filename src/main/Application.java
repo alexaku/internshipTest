@@ -2,24 +2,44 @@ package main;
 
 import institution.University;
 import institution.interlink.Internship;
-import person.Student;
-import person.consciousness.Knowledge;
+import readStudents.StudentRepository;
+import readStudents.StudentsInCode;
 
 public class Application {
     public static void main(String[] args) {
+        
         University university = new University("CH.U.I.");
 
-        university.addStudent(new Student("Andrew Kostenko", new Knowledge(98)));
-        university.addStudent(new Student("Julia Veselkina", new Knowledge(54)));
-        university.addStudent(new Student("Maria Perechrest", new Knowledge(51)));
+        StudentRepository listOfStudents = new StudentsInCode();
+
+
+        university.addStudent(listOfStudents.getStudents().get(0));
+        university.addStudent(listOfStudents.getStudents().get(1));
+        university.addStudent(listOfStudents.getStudents().get(2));
+        university.addStudent(listOfStudents.getStudents().get(9));
+        university.addStudent(listOfStudents.getStudents().get(3));
+        university.addStudent(listOfStudents.getStudents().get(4));
+        university.addStudent(listOfStudents.getStudents().get(5));
+        university.addStudent(listOfStudents.getStudents().get(6));
+        university.addStudent(listOfStudents.getStudents().get(7));
+        university.addStudent(listOfStudents.getStudents().get(8));
 
         Internship internship = new Internship("Interlink");
 
-        internship.setStudent(new Student("Andrew Kostenko", new Knowledge(98)), university);
-        internship.setStudent(new Student("Julia Veselkina", new Knowledge(54)), university);
-        internship.setStudent(new Student("Maria Perechrest", new Knowledge(51)), university);
+        internship.setStudent(listOfStudents.getStudents().get(0), university);
+        internship.setStudent(listOfStudents.getStudents().get(1), university);
+        internship.setStudent(listOfStudents.getStudents().get(2), university);
+        internship.setStudent(listOfStudents.getStudents().get(3), university);
+        internship.setStudent(listOfStudents.getStudents().get(4), university);
 
-        System.out.println(university.getAverageLevelOfKnowledge());
+        university.addStudent(listOfStudents.getStudents().get(9));
+
+        internship.setStudent(listOfStudents.getStudents().get(5), university);
+        internship.setStudent(listOfStudents.getStudents().get(6), university);
+        internship.setStudent(listOfStudents.getStudents().get(7), university);
+        internship.setStudent(listOfStudents.getStudents().get(8), university);
+        internship.setStudent(listOfStudents.getStudents().get(9), university);
+
         System.out.println("List of internship's students:");
         System.out.println(internship.getStudents());
     }
