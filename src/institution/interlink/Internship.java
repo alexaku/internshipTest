@@ -22,7 +22,16 @@ public class Internship {
     }
 
     public String getStudents() {
-        //TODO: Implementation is needed
-        return "Andrew Maslenko\nJulia Veselkina\n";
+        String internshipsStudents = "";
+
+        for (University university : universities) {
+            for (Student student : students) {
+                if (student.getKnowledge() > university.getAverageLevelOfKnowledge()
+                        && !(internshipsStudents.contains(student.getName()))) {
+                    internshipsStudents += student.getName() + "\n";
+                }
+            }
+        }
+        return internshipsStudents;
     }
 }

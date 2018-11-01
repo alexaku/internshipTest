@@ -13,10 +13,6 @@ public class University {
         this.name = name;
     }
 
-    public void setStudent(Student student) {
-        //TODO: Implementation is needed
-    }
-
     public void addStudent(Student student) {
         students.add(student);
         setAverageLevelOfKnowledge(this.name);

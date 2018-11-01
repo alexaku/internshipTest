@@ -15,6 +15,10 @@ public class Application {
 
         Internship internship = new Internship("Interlink");
 
+        internship.setStudent(new Student("Andrew Kostenko", new Knowledge(98)), university);
+        internship.setStudent(new Student("Julia Veselkina", new Knowledge(54)), university);
+        internship.setStudent(new Student("Maria Perechrest", new Knowledge(51)), university);
+
         System.out.println(university.getAverageLevelOfKnowledge());
         System.out.println("List of internship's students:");
         System.out.println(internship.getStudents());
