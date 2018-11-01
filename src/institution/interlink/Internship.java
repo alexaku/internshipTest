@@ -3,8 +3,10 @@ package institution.interlink;
 import person.Student;
 
 public class Internship {
+    private String name;
+
     public Internship(String name) {
-        //TODO: Implementation is needed
+        this.name = name;
     }
 
     public void setStudent(Student student) {
