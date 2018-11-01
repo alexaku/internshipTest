@@ -6,4 +6,8 @@ public class Knowledge {
     public Knowledge(int mark) {
         this.mark = mark;
     }
+
+    public int getMark() {
+        return mark;
+    }
 }
